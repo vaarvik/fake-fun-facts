@@ -10,20 +10,21 @@ class FactList extends Component {
   };
   displayFacts = () => {
     var { data } = this.props;
-    console.log(this.props);
     if (data.loading) {
       return (
-        <div className="sweet-loading">
-          <MoonLoader
-            sizeUnit={"px"}
-            size={40}
-            color={"#FF5F63"}
-            loading={data.loading}
-          />
+        <div className="sweet-loading-holder">
+          <div className="sweet-loading">
+            <MoonLoader
+              sizeUnit={"px"}
+              size={150}
+              color={"#FF5F63"}
+              loading={data.loading}
+            />
+          </div>
         </div>
       );
     } else {
-      return data.facts.map(fact => {
+      return [...data.facts].reverse().map(fact => {
         const sel =
           this.state.selected === fact.id ? (
             <article>

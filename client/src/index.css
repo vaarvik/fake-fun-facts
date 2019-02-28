@@ -191,3 +191,10 @@ button {
 .fact-details {
   margin: 30px;
 }
+
+.sweet-loading-holder {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
